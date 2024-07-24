@@ -17,12 +17,12 @@
 @media (max-width: 900px) {
   .Header {
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-align: center;
   }
   
   .textField{
-    font-size: 0.7rem;
+    font-size: 1rem;
     margin-left:5%;
   }
 }
@@ -36,6 +36,6 @@
     margin-top: 3%;
     margin-bottom: 3%;
                       
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 }

@@ -1,17 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SignIn from "./components/auth/SignIn";
 import ErrorHandler from "./baseComponents/ErrorHandler";
-import AddCar from "./components/AddCar";
+import AddProduct from "./components/AddProduct";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-export default function App() {
+import { Ewelogistics } from "./Utilis/interceptor";
+import { useSelector, useDispatch } from 'react-redux';
 
+export default function App() {
+useEffect(()=>{
+  Ewelogistics();
+})
+const token = useSelector((state) => state?.AuthReducer);
+console.log("token===>",token);
   return (
+    
     <Router>
       <Routes>
         <Route path="*" element={<ErrorHandler />} />
-        <Route path="/" element={<SignIn />} />
-        <Route path="/AddCar" element={localStorage.getItem("token")?(<AddCar />):(<SignIn/>)} />
+        <Route path="/" element={Object.keys(token).length === 0?(<SignIn/>):(<AddProduct/>)} />
+        {/* <Route path="/addProduct" element={token?(<AddProduct />):(<SignIn/>)} /> */}
       </Routes>
     </Router>
+    
   );
 }
