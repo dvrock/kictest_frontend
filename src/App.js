@@ -10,7 +10,7 @@ export default function App() {
 useEffect(()=>{
   Ewelogistics();
 })
-const token = useSelector((state) => state?.AuthReducer);
+const token = useSelector((state) => state?.AuthReducer?.userData);
 console.log("token===>",token);
   return (
     

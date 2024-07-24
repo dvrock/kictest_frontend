@@ -10,6 +10,7 @@ import * as yup from "yup";
 import { TextField, Button, Grid } from '@mui/material';
 import { useSelector,useDispatch } from "react-redux";
 import * as Yup from 'yup';
+import LogoutButton from "../baseComponents/Logout";
 import axios from "axios";
 const validationSchema = Yup.object({
   name: Yup.string().required('Name is required'),
@@ -116,6 +117,7 @@ export default function AddProduct() {
           <Button variant="contained" color="primary" type="submit">
             Submit
           </Button>
+          <LogoutButton/>
         </Grid>
       </Grid>
     </form>
